@@ -135,6 +135,8 @@ body {
 
 .site-nav__link,
 .header-contacts__link {
+  position: relative;
+
   display: inline-block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -145,6 +147,7 @@ body {
   text-decoration: none;
 
   color: var(--text-color-primary);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav__link:hover,
@@ -153,6 +156,20 @@ body {
 .header-contacts__link:hover,
 .header-contacts__link:focus {
   color: var(--text-color-accent);
+}
+
+.site-nav__link--current::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  content: '';
+  display: block;
+  height: 4px;
+  width: 100%;
+
+  border-radius: 2px;
+  background-color: var(--text-color-accent);
 }
 
 /* Header contacts */
@@ -217,10 +234,12 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
 
-  color: var(--text-color-button-text-light);
-  background-color: var(--bg-color-button-accent-primary);
   border: 0 solid transparent;
   border-radius: 4px;
+  color: var(--text-color-button-text-light);
+  background-color: var(--bg-color-button-accent-primary);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero__button:hover,
@@ -376,6 +395,9 @@ body {
   border-radius: 50%;
 
   color: var(--text-color-social);
+  background-color: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-links__link:hover,
@@ -408,9 +430,12 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
 
+  border-radius: 4px;
   color: var(--thumb-color);
   border: 1px solid var(--thumb-color);
-  border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients__link:hover,
@@ -483,7 +508,10 @@ body {
 .footer-contacts__link {
   font-style: normal;
   text-decoration: none;
+
   color: var(--text-color-contacts);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts__link:hover,
@@ -515,10 +543,14 @@ body {
   line-height: 1.62;
   letter-spacing: 0.03em;
 
-  color: var(--text-color-button-text-dark);
-  background-color: var(--bg-color-button-primary);
   border: 0 solid transparent;
   border-radius: 4px;
+  color: var(--text-color-button-text-dark);
+  background-color: var(--bg-color-button-primary);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-filter__button:hover,
@@ -554,6 +586,8 @@ body {
   text-decoration: none;
 
   color: var(--text-color-primary);
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-cards__link:hover {
