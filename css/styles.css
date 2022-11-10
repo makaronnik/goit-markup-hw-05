@@ -677,7 +677,8 @@ body {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-cards__thumb:hover .portfolio-cards__description {
+.portfolio-cards__link:hover .portfolio-cards__description,
+.portfolio-cards__link:focus .portfolio-cards__description {
   transform: translateY(-100%);
 }
 
